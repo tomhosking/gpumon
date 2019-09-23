@@ -8,6 +8,17 @@
   <body>
     <div id="react_root"></div>
 
+    <a onclick="openPopup()">O</a>
+
+    <script>
+        function openPopup()
+        {
+            var winFeature =
+        'location=no,toolbar=no,menubar=no,scrollbars=yes,resizable=yes';
+window.open('/','null',winFeature); 
+        }
+    </script>
+
     <!-- Load React. -->
     <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>

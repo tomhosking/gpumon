@@ -10,8 +10,8 @@ class ProgressBar extends React.Component {
     }
   
     render() {
-      return <div className="progress" style={{height: '20px'}}>
-                      <div className="progress-bar progress-bar-striped" role="progressbar" style={{width: this.props.progress+'%'}}>{this.props.progress}%</div>
+      return <div className="progress" style={{height: '30px', 'font-size': '20px', 'font-weight': 'bold'}}>
+                      <div className={'p-1 progress-bar progress-bar-striped  progress-bar-animated ' + ( this.props.progress > 50 ? (this.props.progress > 80 ? 'bg-danger' : 'bg-warning') : 'bg-success')} role="progressbar" style={{width: this.props.progress+'%'}}>{this.props.progress}%</div>
                   </div>
     }
   }
@@ -44,13 +44,13 @@ class App extends React.Component {
   render() {
     return <div className="container p-2">
                 <ProgressBar progress={this.state.usage} />
-                <div className="card">
-                    {/* <div className="card-body">
+                {/* <div className="card">
+                    <div className="card-body">
                         <h5 className="card-title">Card title</h5>
                         <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" className="btn btn-primary">Go somewhere</a>
-                    </div> */}
-                </div>
+                    </div>
+                </div> */}
             </div>
   }
 }
