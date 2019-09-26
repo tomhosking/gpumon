@@ -36,10 +36,12 @@ class App extends React.Component {
       .then((data) => this.setState(
           {
               ...this.state,
-              mem_usage: data['utilization.memory [%]'],
+              mem_usage: (100*data['memory.used [MiB]'].replace(' MiB','')/data['memory.total [MiB]'].replace(' MiB','')).toFixed(0),
               usage: data['utilization.gpu [%]'],
              temp: data['temperature.gpu'],
-             mem_free: data['memory.free [MiB]'].replace(' MiB','')
+             mem_free: data['memory.free [MiB]'].replace(' MiB',''),
+             mem_total: data['memory.total [MiB]'].replace(' MiB',''),
+             mem_used: data['memory.used [MiB]'].replace(' MiB','')
 
         }))
       .catch((err) => console.log(err))
