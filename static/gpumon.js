@@ -13,7 +13,7 @@ class ProgressBar extends React.Component {
       return <div>
                 <span className="badge" style={{'float': 'left', 'marginTop':'7px', 'width': '10%', 'textAlign': 'right'}}>{this.props.title}</span>
                 <div className="progress m-1" style={{height: '30px', 'fontSize': '20px', 'fontWeight': 'bold'}}>
-                      <div className={'p-1 progress-bar progress-bar-striped  progress-bar-animated ' + ( this.props.progress > 50 ? (this.props.progress > 80 ? 'bg-danger' : 'bg-warning') : 'bg-success')} role="progressbar" style={{width: this.props.progress+'%'}}>{this.props.progress}%</div>
+                      <div className={'p-1 progress-bar progress-bar-striped ' + ( this.props.progress > 50 ? (this.props.progress > 80 ? 'bg-danger' : 'bg-warning') : 'bg-success')} role="progressbar" style={{width: this.props.progress+'%'}}>{this.props.progress}%</div>
                   </div>
             </div>
     }
